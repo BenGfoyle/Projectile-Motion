@@ -24,25 +24,26 @@ def getHeight(u,t,a,h):
         s = (u*t) + (0.5*t)*(v-u) + h
     #elif t = ?:
        #s = u*((v-u)/a) + 0.5*((v**2 + u**2 + 2*v*u)/a) + h
-    """
-   
-h = 0
-angle = 90
-v = 10
-u = 100
-a = -10
-    
+    """    
 h = float(input("Enter a value for initial height of projectile (meters) "))
 angle = float(input("Enter a value for angle of trajectory (Deg) "))
+angle = math.radians(angle)
+print(angle)
 #v = input("Enter a value for final velocity (meters/second), if unknown enter ?") #assumed to be v @ angle 
 u = float(input("Enter a value for initial velocity (meters/second) "))
 a = float(input("Enter a value for acceleration due to gravity (meters/second^2) "))
 
 #finding cartesian components of inital and final velocity (final velocity not currently used for anything)
-uy = u*math.sin(angle)
-ux = u*math.cos(angle)
-#vy = v*math.sin(angle)
-#vx = v*math.cos(angle) 
+
+#Check if angle is 90deg
+if angle != 1.5707963267948966:
+    uy = u*math.sin(angle)
+    ux = u*math.cos(angle)
+    #vy = v*math.sin(angle)
+    #vx = v*math.cos(angle) 
+else:
+    uy = u
+    ux = 0
 
 #Lists used to track time, height and x displacement
 height = []
