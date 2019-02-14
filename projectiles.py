@@ -23,7 +23,7 @@ def plotGraph(yAxis,xAxis,timeAxis):
     ax1.plot(timeAxis,yAxis)
 
 def getHeight(u,t,a,h): #get max distance given the parameters
-    s = (u*t) + (0.5*a)*(t**2) + h
+    s = (u*t) - (0.5*a)*(t**2) + h
     return s
     
     
